@@ -9,15 +9,14 @@
       --obsidian:   #090b0f;
       --deep:       #0d1015;
       --surface:    #111520;
-      --surface-2:  #161c27;
       --gold:       #c6a15b;
       --gold-light: #d4b47a;
-      --gold-dim:   rgba(198,161,91,0.12);
       --silver:     #c3cad6;
       --text:       #e8edf4;
       --muted:      #8896a8;
       --border:     rgba(255,255,255,0.07);
       --border-2:   rgba(255,255,255,0.12);
+      --danger:     rgba(248,113,113,0.80);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,553 +44,263 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
     }
-
-    .header-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .header-logo { display: flex; align-items: center; gap: 10px; }
     .logo-mark {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+      width: 30px; height: 30px; border-radius: 7px;
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.78rem;
-      font-weight: 900;
-      color: #090b0f;
-      letter-spacing: -0.01em;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.78rem; font-weight: 900; color: #090b0f;
+      letter-spacing: -0.01em; flex-shrink: 0;
     }
-
-    .logo-text {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .logo-text em {
-      font-style: normal;
-      color: var(--gold);
-    }
-
-    .header-sub {
-      font-size: 0.73rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-    }
+    .logo-text { font-size: 1.05rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+    .logo-text em { font-style: normal; color: var(--gold); }
+    .header-sub { font-size: 0.73rem; color: var(--muted); }
 
     /* ── HERO ── */
     .hero {
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
       padding: 80px 40px 72px;
       background: linear-gradient(180deg, #090b0f 0%, #0d1015 55%, #111520 100%);
     }
-
-    .hero-glow {
-      position: absolute;
-      inset: 0;
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
       background:
         radial-gradient(circle at 12% 20%, rgba(198,161,91,0.10) 0%, transparent 32%),
         radial-gradient(circle at 86% 14%, rgba(148,163,184,0.06) 0%, transparent 26%);
-      pointer-events: none;
     }
-
     .hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      gap: 52px;
-      align-items: flex-start;
-      position: relative;
+      max-width: 900px; margin: 0 auto; position: relative;
+      display: flex; gap: 52px; align-items: flex-start;
     }
-
     .hero-photo {
-      flex-shrink: 0;
-      width: 200px;
-      height: 240px;
-      border-radius: 12px;
-      object-fit: cover;
-      object-position: top;
+      flex-shrink: 0; width: 200px; height: 240px;
+      border-radius: 12px; object-fit: cover; object-position: top;
       border: 1px solid var(--border-2);
-      box-shadow:
-        0 0 0 1px rgba(198,161,91,0.18),
-        0 24px 48px -12px rgba(0,0,0,0.6);
+      box-shadow: 0 0 0 1px rgba(198,161,91,0.18), 0 24px 48px -12px rgba(0,0,0,0.6);
     }
-
     .hero-photo-fallback {
-      flex-shrink: 0;
-      width: 200px;
-      height: 240px;
-      border-radius: 12px;
-      border: 1px solid var(--border-2);
+      flex-shrink: 0; width: 200px; height: 240px;
+      border-radius: 12px; border: 1px solid var(--border-2);
       background: rgba(255,255,255,0.03);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: 0.04em;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 900; color: var(--gold); letter-spacing: 0.04em;
     }
-
-    .hero-info {
-      flex: 1;
-      padding-top: 6px;
-    }
-
+    .hero-info { flex: 1; padding-top: 6px; }
     .hero-badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(198,161,91,0.28);
-      background: rgba(198,161,91,0.08);
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold);
+      border: 1px solid rgba(198,161,91,0.28); background: rgba(198,161,91,0.08);
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 16px;
     }
-
-    .hero-name {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.1;
-    }
-
-    .hero-title-en {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      letter-spacing: 0.04em;
-    }
-
+    .hero-name { font-size: 3rem; font-weight: 800; letter-spacing: -0.04em; color: var(--text); margin-bottom: 4px; line-height: 1.1; }
+    .hero-title-en { font-size: 0.88rem; color: var(--muted); margin-bottom: 28px; letter-spacing: 0.04em; }
     .hero-philosophy {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid var(--border);
-      border-left: 2px solid var(--gold);
-      padding: 16px 20px;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--silver);
-      font-style: italic;
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      border-left: 2px solid var(--gold); padding: 16px 20px;
+      border-radius: 0 10px 10px 0; font-size: 0.92rem; line-height: 1.85;
+      color: var(--silver); font-style: italic;
     }
 
     /* ── MEDIA ROW ── */
     .media-row {
-      background: rgba(255,255,255,0.018);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 40px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      background: rgba(255,255,255,0.018); border-bottom: 1px solid var(--border);
+      padding: 12px 40px; display: flex; gap: 8px; flex-wrap: wrap;
+      justify-content: center; align-items: center;
     }
-
-    .media-label {
-      font-size: 0.67rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      margin-right: 4px;
-    }
-
+    .media-label { font-size: 0.67rem; color: var(--muted); letter-spacing: 0.06em; margin-right: 4px; }
     .media-channel {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
-      transition: color 0.2s;
+      font-size: 0.7rem; font-weight: 600; color: var(--muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 20px; letter-spacing: 0.04em;
     }
 
     /* ── MAIN LAYOUT ── */
     main {
-      max-width: 920px;
-      margin: 0 auto;
+      max-width: 920px; margin: 0 auto;
       padding: 48px 24px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
     }
 
     /* ── CARD ── */
     .card {
       background: linear-gradient(180deg, rgba(22,27,35,0.88) 0%, rgba(15,19,25,0.94) 100%);
-      border-radius: 16px;
-      padding: 26px 28px;
+      border-radius: 16px; padding: 26px 28px;
       border: 1px solid var(--border);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.04),
-        0 20px 40px -24px rgba(0,0,0,0.6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 20px 40px -24px rgba(0,0,0,0.6);
     }
-
-    .card.full-width {
-      grid-column: 1 / -1;
-    }
+    .card.full-width { grid-column: 1 / -1; }
 
     /* ── CARD HEADER ── */
     .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border);
     }
-
     .card-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: rgba(198,161,91,0.09);
-      border: 1px solid rgba(198,161,91,0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 34px; height: 34px; border-radius: 9px;
+      background: rgba(198,161,91,0.09); border: 1px solid rgba(198,161,91,0.22);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-
     .card-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.8;
+      width: 16px; height: 16px; stroke: var(--gold); fill: none;
+      stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8;
     }
-
-    .card-title {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text);
-    }
+    .card-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
 
     /* ── INFO LIST ── */
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-    }
-
+    .info-list { list-style: none; display: flex; flex-direction: column; }
     .info-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.9rem;
-      color: var(--silver);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      line-height: 1.65;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.9rem; color: var(--silver); display: flex; align-items: flex-start; gap: 12px; line-height: 1.65;
     }
-
-    .info-list li:last-child {
-      border-bottom: none;
-    }
-
+    .info-list li:last-child { border-bottom: none; }
     .info-list li::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-      margin-top: 9px;
+      content: ''; display: block; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 9px;
     }
 
     /* ── CRED GRID ── */
-    .cred-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .cred-item {
-      background: rgba(255,255,255,0.028);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      padding: 10px 14px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      background: rgba(255,255,255,0.028); border: 1px solid var(--border);
+      border-radius: 9px; padding: 10px 14px; font-size: 0.82rem; color: var(--muted);
+      display: flex; align-items: center; gap: 10px;
     }
+    .cred-item::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
-    .cred-item::before {
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    /* ── GUIDE INTRO ── */
+    /* ── GUIDE SECTION ── */
     .guide-intro {
-      background: rgba(198,161,91,0.055);
-      border: 1px solid rgba(198,161,91,0.18);
-      border-radius: 10px;
-      padding: 18px 20px;
-      font-size: 0.9rem;
-      color: var(--silver);
-      margin-bottom: 32px;
-      line-height: 1.85;
+      background: rgba(198,161,91,0.055); border: 1px solid rgba(198,161,91,0.18);
+      border-radius: 10px; padding: 18px 20px; font-size: 0.9rem; color: var(--silver);
+      margin-bottom: 32px; line-height: 1.85;
     }
 
-    /* ── CHAPTER ── */
-    .chapter {
-      margin-bottom: 34px;
+    /* ── SECTION (numbered 1, 2, 3 …) ── */
+    .guide-section { margin-bottom: 36px; }
+    .guide-section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      font-size: 1rem; font-weight: 800; color: var(--text);
+      padding: 11px 16px; margin-bottom: 20px;
+      background: rgba(198,161,91,0.07); border: 1px solid rgba(198,161,91,0.18);
+      border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0;
+      letter-spacing: -0.01em;
     }
 
-    .chapter-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      padding: 10px 16px;
-      background: rgba(198,161,91,0.07);
-      border: 1px solid rgba(198,161,91,0.18);
-      border-left: 2px solid var(--gold);
-      border-radius: 0 9px 9px 0;
-      margin-bottom: 18px;
-    }
-
-    .chapter-body {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 12px;
-      padding-left: 2px;
-    }
-
-    /* ── SUB SECTION ── */
-    .sub-section {
-      margin-bottom: 24px;
-    }
+    /* ── SUB BLOCK (가, 나, 다 / 1) 급여압류 …) ── */
+    .sub-block { margin-bottom: 24px; }
+    .sub-block:last-child { margin-bottom: 0; }
 
     .sub-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--silver);
-      margin-bottom: 10px;
-      padding-left: 2px;
+      font-size: 0.9rem; font-weight: 700; color: var(--silver);
+      margin-bottom: 10px; padding-left: 2px;
     }
+
+    .body-text { font-size: 0.88rem; color: var(--muted); line-height: 1.9; margin-bottom: 10px; padding-left: 2px; }
 
     /* ── NOTE BOX ── */
     .note-box {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid var(--border);
-      border-left: 2px solid rgba(198,161,91,0.45);
-      border-radius: 0 9px 9px 0;
-      padding: 12px 16px;
-      font-size: 0.86rem;
-      color: var(--silver);
-      line-height: 1.85;
-      margin: 12px 0;
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      border-left: 2px solid rgba(198,161,91,0.45); border-radius: 0 9px 9px 0;
+      padding: 12px 16px; font-size: 0.86rem; color: var(--silver);
+      line-height: 1.85; margin: 12px 0;
     }
 
     /* ── NOTICE BOX ── */
     .notice-box {
-      background: rgba(198,161,91,0.055);
-      border: 1px solid rgba(198,161,91,0.18);
-      border-radius: 9px;
-      padding: 12px 16px;
-      font-size: 0.86rem;
-      color: #b89a60;
-      line-height: 1.8;
-      margin: 10px 0;
+      background: rgba(198,161,91,0.055); border: 1px solid rgba(198,161,91,0.18);
+      border-radius: 9px; padding: 12px 16px; font-size: 0.86rem; color: #b89a60;
+      line-height: 1.8; margin: 10px 0;
     }
 
-    /* ── ITEM LIST ── */
-    .item-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin: 12px 0;
+    /* ── DETAIL LIST ── */
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+    .detail-list li {
+      font-size: 0.86rem; color: var(--silver); padding: 9px 14px;
+      background: rgba(255,255,255,0.028); border: 1px solid var(--border);
+      border-radius: 8px; line-height: 1.72;
+    }
+    .detail-list.danger li {
+      color: #f87171; background: rgba(248,113,113,0.05); border-color: rgba(248,113,113,0.14);
     }
 
-    .item-list li {
-      font-size: 0.86rem;
-      color: var(--silver);
-      padding: 9px 14px;
-      background: rgba(255,255,255,0.028);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      line-height: 1.72;
+    /* ── META LIST (요건 항목 등) ── */
+    .meta-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+    .meta-list li {
+      font-size: 0.86rem; color: var(--silver); padding: 8px 14px;
+      background: rgba(255,255,255,0.02); border-left: 2px solid rgba(198,161,91,0.35);
+      border-radius: 0 8px 8px 0; line-height: 1.75;
     }
 
-    .item-list.danger li {
-      color: #f87171;
-      background: rgba(248,113,113,0.05);
-      border-color: rgba(248,113,113,0.14);
+    /* ── PROCESS FLOW ── */
+    .process-flow {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0;
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px; margin: 12px 0;
+    }
+    .process-step {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; color: var(--muted); line-height: 1.4;
+      white-space: nowrap;
+    }
+    .process-step .step-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0;
+    }
+    .process-arrow { color: rgba(198,161,91,0.4); font-size: 0.75rem; margin: 0 4px; }
+    .process-label { font-size: 0.7rem; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; margin-right: 6px; flex-shrink: 0; }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none; border-top: 1px solid var(--border); margin: 28px 0;
     }
 
     /* ── SUMMARY BOX ── */
     .summary-box {
       background: linear-gradient(135deg, rgba(22,27,35,0.96), rgba(15,19,25,0.98));
-      border: 1px solid rgba(198,161,91,0.2);
-      border-radius: 12px;
-      padding: 24px 26px;
-      margin-top: 10px;
+      border: 1px solid rgba(198,161,91,0.2); border-radius: 12px;
+      padding: 24px 26px; margin-top: 10px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
-
     .summary-heading {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
     }
-
-    .summary-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .summary-list li {
-      font-size: 0.88rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .summary-list li strong {
-      display: block;
-      font-size: 0.86rem;
-      color: var(--gold-light);
-      margin-bottom: 2px;
-    }
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .summary-list li { font-size: 0.88rem; line-height: 1.8; color: var(--muted); }
+    .summary-list li strong { display: block; font-size: 0.86rem; color: var(--gold-light); margin-bottom: 2px; }
 
     /* ── CTA ── */
-    .cta-card {
-      grid-column: 1 / -1;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 44px 32px;
-    }
-
+    .cta-card { grid-column: 1 / -1; position: relative; overflow: hidden; text-align: center; padding: 44px 32px; }
     .cta-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0; pointer-events: none;
       background: radial-gradient(ellipse at 50% 0%, rgba(198,161,91,0.08) 0%, transparent 65%);
-      pointer-events: none;
     }
-
-    .cta-icon-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      position: relative;
-    }
-
+    .cta-icon-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; position: relative; }
     .cta-icon-wrap {
-      width: 40px;
-      height: 40px;
-      border-radius: 11px;
-      background: rgba(198,161,91,0.09);
-      border: 1px solid rgba(198,161,91,0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: rgba(198,161,91,0.09); border: 1px solid rgba(198,161,91,0.22);
+      display: flex; align-items: center; justify-content: center;
     }
-
     .cta-icon-wrap svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 1.8;
+      width: 18px; height: 18px; stroke: var(--gold); fill: none;
+      stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8;
     }
-
-    .cta-title {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text);
-    }
-
-    .cta-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 26px;
-      line-height: 1.85;
-      position: relative;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
+    .cta-title { font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); }
+    .cta-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 26px; line-height: 1.85; position: relative; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 30px;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: opacity 0.2s, background 0.2s;
-      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 30px;
+      border-radius: 10px; font-size: 0.88rem; font-weight: 600; text-decoration: none;
+      letter-spacing: 0.02em; transition: opacity 0.2s, background 0.2s;
     }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #090b0f;
-    }
-
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #090b0f; }
     .btn-gold:hover { opacity: 0.88; }
-
-    .btn-outline {
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      border: 1px solid var(--border-2);
-    }
-
+    .btn-outline { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid var(--border-2); }
     .btn-outline:hover { background: rgba(255,255,255,0.08); }
 
     /* ── FOOTER ── */
     footer {
-      background: rgba(5,6,9,0.98);
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.76rem;
-      padding: 24px;
-      line-height: 1.9;
+      background: rgba(5,6,9,0.98); border-top: 1px solid var(--border);
+      color: var(--muted); text-align: center; font-size: 0.76rem; padding: 24px; line-height: 1.9;
     }
 
     /* ── RESPONSIVE ── */
@@ -605,6 +314,7 @@
       main { grid-template-columns: 1fr; padding: 32px 16px 60px; }
       .card.full-width, .cta-card { grid-column: 1; }
       .cred-grid { grid-template-columns: 1fr; }
+      .process-flow { gap: 4px; }
     }
   </style>
 </head>
@@ -621,16 +331,14 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-glow"></div>
   <div class="hero-inner">
     <img
       class="hero-photo"
-      src="https://novalaw.kr/images/profiles/lawyers/profile-lawyer-leedonho-2026.jpg"
+      src="profile-leedonho.jpg"
       alt="이돈호 대표변호사"
       onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';"
     />
     <div class="hero-photo-fallback" id="photo-fallback" style="display:none;">NOVA</div>
-
     <div class="hero-info">
       <span class="hero-badge">대표변호사</span>
       <h1 class="hero-name">이돈호</h1>
@@ -724,111 +432,244 @@
     </div>
   </div>
 
-  <!-- 압류 및 집행 절차 안내 -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- 민사 승소 후 판결금 회수를 위한 집행 절차 가이드     -->
+  <!-- ═══════════════════════════════════════════════════ -->
   <div class="card full-width">
     <div class="card-header">
       <div class="card-icon">
         <svg viewBox="0 0 24 24"><path d="M12 3v18M3 8l9-5 9 5M5 12l4 9M15 12l4 9M2 21h20"/></svg>
       </div>
-      <span class="card-title">압류 및 집행 절차 안내</span>
+      <span class="card-title">민사 승소 후 판결금 회수를 위한 집행 절차 가이드</span>
     </div>
 
-    <div class="guide-intro">
-      안녕하세요, 압류 및 집행 절차 관련해 안내드립니다.<br><br>
-      안내드릴 내용이 조금 길어, 아래 내용을 천천히 확인 후 어느 절차로 진행을 원하시는지 말씀 부탁드립니다.<br><br>
-      채권을 받아내는 절차는 크게 <strong style="color:var(--gold-light)">1. 채권압류</strong>와 <strong style="color:var(--gold-light)">2. 강제집행</strong>으로 나뉩니다.
-    </div>
+    <!-- ─── 1. 준비 단계 ─── -->
+    <div class="guide-section">
+      <div class="section-title">1. 준비 단계 — 채무자의 재산 파악하기</div>
+      <p class="body-text">강제집행을 시작하기 전, 먼저 집행할 수 있는 권한을 부여받고 채무자의 재산이 어디에 있는지 확인해야 합니다.</p>
 
-    <!-- ── 1. 채권압류 ── -->
-    <div class="chapter">
-      <div class="chapter-title">1. 채권압류</div>
-      <p class="chapter-body">채권압류는 채무자 재산 중에서 급여나 예금처럼 제3자를 통해 받을 돈을 묶는 절차입니다.</p>
+      <!-- 가. 집행권원 확보 -->
+      <div class="sub-block">
+        <div class="sub-title">가. 집행권원 확보</div>
+        <p class="body-text">강제집행을 하려면 판결문 외에 '실제로 집행해도 좋다'는 법원의 확인이 필요합니다.</p>
+        <div class="note-box">
+          <strong style="color:var(--silver);">대상</strong><br>
+          확정판결, 화해조서, 이행권고결정, 지급명령, 조정조서, 공정증서 등
+        </div>
+        <p class="body-text" style="margin-top:8px;"><strong style="color:var(--silver);">필수 발급 사항</strong></p>
+        <ul class="detail-list">
+          <li><strong>집행문</strong> — 판결문에 집행 권한을 부여하는 별지</li>
+          <li><strong>송달증명원</strong> — 상대방에게 판결문이 전달되었다는 증명</li>
+          <li><strong>확정증명원</strong> — 판결이 최종 확정되었다는 증명</li>
+        </ul>
+        <div class="notice-box">※ 지급명령과 공정증서는 송달증명원 및 확정증명원 발급 불필요</div>
+      </div>
 
-      <!-- 1) 급여압류 -->
-      <div class="sub-section">
-        <div class="sub-title">1) 급여압류</div>
-        <p class="chapter-body">채무자가 회사에 다니고 있다면, 그 회사에 지급되는 급여를 압류할 수 있습니다.<br>
-        즉, 채무자가 월급을 받을 때 그 돈을 바로 가져가지 못하게 하고, 그중 압류 가능한 범위에서 채권자가 회수하는 방식입니다.</p>
-        <div class="note-box">→ 급여압류를 진행하기 위해서는 다음 사항이 중요합니다.</div>
-        <ul class="item-list">
-          <li><strong>1.</strong> 급여압류를 하려면 채무자의 현재 근무지를 알아야 합니다.</li>
-          <li><strong>2.</strong> 근무처를 특정해야 법원에 압류 신청이 가능합니다.&nbsp;
-            <span style="color:#f87171; font-size:0.84rem;">→ 현 근무지를 모르면 진행이 어렵습니다.</span></li>
-          <li><strong>3.</strong> 급여는 전부 압류되는 것이 아니라, 법에서 정한 생계보호 범위(250만원)가 있어 일부만 압류됩니다.</li>
+      <hr class="section-divider">
+
+      <!-- 나. 재산명시신청 -->
+      <div class="sub-block">
+        <div class="sub-title">나. 재산명시신청</div>
+        <p class="body-text">채무자 스스로 자신의 재산 목록을 작성하여 법원에 제출하게 하는 절차입니다.</p>
+        <ul class="detail-list">
+          <li><strong>언제 하나요?</strong> 채무자의 재산을 찾기 어려울 때 가장 먼저 진행합니다.</li>
+          <li><strong>방법</strong> — 채무자 주소지 관할 법원에 신청서 제출</li>
+        </ul>
+        <p class="body-text" style="margin-top:10px;"><strong style="color:var(--silver);">준비 서류</strong></p>
+        <ul class="meta-list">
+          <li>재산명시신청서</li>
+          <li>집행권원 정본 및 집행문</li>
+          <li>송달/확정증명원</li>
         </ul>
       </div>
 
+      <hr class="section-divider">
+
+      <!-- 다. 재산조회 -->
+      <div class="sub-block">
+        <div class="sub-title">다. 재산조회</div>
+        <p class="body-text">채무자가 재산을 숨기거나 명시절차에 협조하지 않을 때, 법원을 통해 직접 기관(은행, 부동산 등)에 재산을 묻는 절차입니다.</p>
+        <p class="body-text"><strong style="color:var(--silver);">신청 요건</strong></p>
+        <ul class="detail-list">
+          <li><strong>1.</strong> 재산명시 신청 시 채무자 주소불명으로 서류 전달이 안 된 경우</li>
+          <li><strong>2.</strong> 제출된 재산만으로는 채권액이 부족한 경우</li>
+          <li><strong>3.</strong> 채무자가 법원에 불출석하거나 거짓으로 재산을 신고한 경우</li>
+        </ul>
+        <p class="body-text" style="margin-top:10px;"><strong style="color:var(--silver);">준비 서류</strong></p>
+        <ul class="meta-list">
+          <li>재산조회신청서</li>
+          <li>재산명시결정문</li>
+          <li>집행권원 정본 및 집행문</li>
+          <li>기관별 조회 비용 납부 영수증</li>
+          <li>송달불능 증명자료 (해당 시)</li>
+        </ul>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- 라. 채무불이행자명부 등재 -->
+      <div class="sub-block">
+        <div class="sub-title">라. 채무불이행자명부 등재 (신용 제재)</div>
+        <p class="body-text">돈을 갚지 않는 채무자의 명단을 법원에 비치하여 '신용 불량' 상태로 만드는 강력한 압박 수단입니다.</p>
+        <div class="note-box">
+          <strong style="color:var(--silver);">신청 요건</strong><br>
+          판결 확정 후 <strong style="color:var(--gold-light);">6개월 이내</strong>에 돈을 갚지 않거나, 재산명시 의무를 위반한 경우
+        </div>
+        <p class="body-text" style="margin-top:10px;"><strong style="color:var(--silver);">준비 서류</strong></p>
+        <ul class="meta-list">
+          <li>채무불이행자명부 등재신청서 (인적사항, 미변제 내역 기재)</li>
+          <li>집행권원 정본 및 집행문</li>
+          <li>송달/확정증명원</li>
+          <li>채무 미변제 사실 입증 서류 (통장 내역 등)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── 2. 부동산 강제집행 ─── -->
+    <div class="guide-section">
+      <div class="section-title">2. 부동산 강제집행 (강제경매)</div>
+      <p class="body-text">채무자 명의 아파트, 빌라, 상가, 토지 등이 있으면 강제경매를 신청할 수 있습니다.</p>
+
+      <p class="body-text"><strong style="color:var(--silver);">유의사항</strong></p>
+      <ul class="detail-list">
+        <li><strong>1.</strong> 채무자 명의 부동산이 확인되어야 합니다. (부동산등기부등본으로 확인 가능)</li>
+        <li><strong>2.</strong> 기존 대출, 근저당, 선순위 권리 등에 따라 배당금이 적거나 없을 수 있습니다.</li>
+      </ul>
+
+      <p class="body-text" style="margin-top:14px;"><strong style="color:var(--silver);">진행 과정</strong></p>
+      <div class="process-flow">
+        <span class="process-step"><span class="step-dot"></span>신청</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>경매개시결정 및 압류</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>감정평가</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>배당요구</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>매각(경매)</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>대금납부 및 소유권이전</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>배당금 수령</span>
+      </div>
+      <p class="body-text" style="font-size:0.82rem; margin-top:6px;">※ 배당요구 단계 — 다른 채권자(근저당 은행, 개인채권, 임차인 등)도 배당에 참가합니다.</p>
+    </div>
+
+    <!-- ─── 3. 동산(유체동산) 강제집행 ─── -->
+    <div class="guide-section">
+      <div class="section-title">3. 동산(유체동산) 강제집행</div>
+      <p class="body-text">흔히 '빨간 딱지'라고 불리는 절차로, 채무자의 집이나 사무실의 가전·가구 등을 압류합니다.<br>집행관이 현장에 나가 압류 후 매각하는 방식으로 진행됩니다.</p>
+
+      <div class="note-box">실무상 아래 세 조건이 모두 갖춰져야 실익이 있습니다.</div>
+      <ul class="detail-list">
+        <li><strong>1. 위치 특정 가능</strong> — 채무자의 주소나 사업장 등 위치를 알아야 합니다.</li>
+        <li><strong>2. 물건 존재</strong> — 그 장소에 실제로 압류할 수 있는 물건이 있어야 합니다.</li>
+        <li><strong>3. 환가 가능성</strong> — 해당 물건이 매각 가능한 가치가 있어야 합니다.</li>
+      </ul>
+
+      <p class="body-text" style="margin-top:14px;"><strong style="color:var(--silver);">진행 과정</strong></p>
+      <div class="process-flow">
+        <span class="process-step"><span class="step-dot"></span>신청</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>집행관 현장 방문 및 조사</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>압류(딱지 부착)</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>매각기일 지정</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>경매(현장·기일 매각)</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>배당절차 진행</span>
+        <span class="process-arrow">→</span>
+        <span class="process-step"><span class="step-dot"></span>배당금 수령</span>
+      </div>
+    </div>
+
+    <!-- ─── 4. 금전채권 강제집행 ─── -->
+    <div class="guide-section">
+      <div class="section-title">4. 금전채권 강제집행 (은행 압류 등)</div>
+      <p class="body-text">채권압류는 채무자 재산 중에서 급여나 예금처럼 제3자를 통해 받을 돈을 묶는 절차입니다.</p>
+
+      <!-- 1) 급여압류 -->
+      <div class="sub-block">
+        <div class="sub-title">1) 급여압류</div>
+        <p class="body-text">채무자가 회사에 다니고 있다면, 그 회사에 지급되는 급여를 압류할 수 있습니다.<br>
+        즉, 채무자가 월급을 받을 때 그 돈을 바로 가져가지 못하게 하고, 그중 압류 가능한 범위에서 채권자가 회수하는 방식입니다.</p>
+
+        <div class="note-box">→ 급여압류를 진행하기 위해서는 다음 사항이 중요합니다.</div>
+        <ul class="detail-list">
+          <li><strong>1.</strong> 급여압류를 하려면 채무자의 현재 근무지를 알아야 합니다.</li>
+          <li><strong>2.</strong> 근무처를 특정해야 법원에 압류 신청이 가능합니다.
+            <span style="color:#f87171; font-size:0.84rem; display:block; margin-top:4px;">▶ 현 근무지를 모르면 급여압류는 진행이 어렵습니다.</span></li>
+          <li><strong>3.</strong> 급여는 전부 압류되는 것이 아니라, 법에서 정한 생계보호 범위(250만원)가 있어 일부만 압류됩니다.</li>
+        </ul>
+
+        <p class="body-text" style="margin-top:14px;"><strong style="color:var(--silver);">진행 과정</strong></p>
+        <div class="process-flow">
+          <span class="process-step"><span class="step-dot"></span>신청</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>압류 및 추심명령 결정</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>제3채무자(회사) 진술서 회신</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>추심금 요청</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>채권자 계좌 입금</span>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
       <!-- 2) 은행 예금압류 -->
-      <div class="sub-section">
+      <div class="sub-block">
         <div class="sub-title">2) 은행 예금압류</div>
-        <p class="chapter-body">채무자 명의 통장에 들어 있는 예금을 압류하는 방법입니다.<br>
+        <p class="body-text">채무자 명의 통장에 들어 있는 예금을 압류하는 방법입니다.<br>
         법원에 신청하면 해당 은행 계좌의 돈이 묶이고, 그 범위에서 채권을 회수할 수 있습니다.</p>
-        <p class="chapter-body">저희 법무법인 노바에서는 압류 진행 시 신용조회를 먼저 진행하시기를 권해드리고 있습니다.</p>
+        <p class="body-text">저희 법무법인 노바에서는 압류 진행 시 신용조회를 먼저 진행하시기를 권해드리고 있습니다.</p>
+
         <div class="notice-box">※ 신용조회를 원하시는 경우 업체 소개해드리고 있습니다.</div>
-        <div class="note-box">▶ 신용조회 시 아래 정보를 확인할 수 있습니다.</div>
-        <ul class="item-list">
+
+        <p class="body-text" style="margin-top:10px;"><strong style="color:var(--silver);">신용조회 시 확인 가능한 정보</strong></p>
+        <ul class="detail-list">
           <li><strong>1.</strong> 채무자의 부동산정보</li>
           <li><strong>2.</strong> 채무불이행 정보</li>
           <li><strong>3.</strong> 카드사 발급 및 연체 이력</li>
           <li><strong>4.</strong> 신용평점</li>
           <li><strong>5.</strong> 은행 거래기관 정보</li>
         </ul>
-        <p class="chapter-body">채권압류(개인)의 경우 급여압류와 마찬가지로 은행 압류 시에도 최저생계비 250만원을 제외한 나머지 금액만 압류됩니다.<br>
-        단, 법인 명의 계좌인 경우 최저생계비는 포함되지 않습니다.</p>
-        <div class="note-box">
-          → 실무상 핵심은 다음과 같습니다.<br><br>
-          은행을 정확히 몰라도 1금융권(우리은행, 국민은행, 신한은행 등)을 상대로 시도는 가능합니다.<br>
-          주요 은행을 순차적으로 신청(평균 3~4개)하는 방식으로 진행합니다.
+
+        <div class="note-box" style="margin-top:14px;">
+          알고 계신 계좌가 있으시다면 신용조회를 통해 해당 계좌가 채무자 계좌가 맞는지 확인하실 수 있습니다.<br><br>
+          채권압류(개인)의 경우, 은행 압류 시에도 최저생계비 250만원을 제외한 나머지 금액만 압류됩니다.<br>
+          단, <strong style="color:var(--silver);">법인 명의 계좌</strong>인 경우에는 최저생계비가 적용되지 않습니다.<br><br>
+          은행을 정확히 몰라도 1금융권(우리은행, 국민은행, 신한은행 등)을 상대로 순차 신청이 가능합니다. (평균 3~4개 신청)
         </div>
-        <p class="chapter-body">다만 다음과 같은 한계가 있습니다.</p>
-        <ul class="item-list danger">
+
+        <p class="body-text" style="margin-top:14px;"><strong style="color:var(--silver);">다만 다음과 같은 한계가 있습니다.</strong></p>
+        <ul class="detail-list danger">
           <li><strong>1.</strong> 그 은행에 계좌가 없을 수 있습니다</li>
           <li><strong>2.</strong> 계좌가 있어도 잔액이 없을 수 있습니다</li>
           <li><strong>3.</strong> 따라서 실제 회수가 전혀 안 될 수도 있습니다</li>
         </ul>
+
+        <p class="body-text" style="margin-top:14px;"><strong style="color:var(--silver);">진행 과정</strong></p>
+        <div class="process-flow">
+          <span class="process-step"><span class="step-dot"></span>신청</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>압류 및 추심명령 결정</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>제3채무자(은행) 진술서 회신</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>추심금 요청</span>
+          <span class="process-arrow">→</span>
+          <span class="process-step"><span class="step-dot"></span>채권자 계좌 입금</span>
+        </div>
       </div>
     </div>
 
-    <!-- ── 2. 강제집행 ── -->
-    <div class="chapter">
-      <div class="chapter-title">2. 강제집행</div>
-      <p class="chapter-body">강제집행은 채무자 명의 재산을 직접 처분해서 돈을 회수하는 절차입니다.</p>
-
-      <!-- 1) 부동산 강제집행 -->
-      <div class="sub-section">
-        <div class="sub-title">1) 부동산 강제집행</div>
-        <p class="chapter-body">채무자 명의 아파트, 빌라, 상가, 토지 등이 있으면 강제경매를 신청할 수 있습니다.</p>
-        <div class="note-box">▶ 절차는 크게 다음과 같습니다.</div>
-        <ul class="item-list">
-          <li><strong>1.</strong> 법원에 강제경매를 신청합니다.</li>
-          <li><strong>2.</strong> 부동산이 매각됩니다.</li>
-          <li><strong>3.</strong> 매각대금에서 채권을 배당받습니다.</li>
-        </ul>
-        <div class="note-box">▶ 유의사항은 다음과 같습니다.</div>
-        <ul class="item-list">
-          <li><strong>1.</strong> 채무자 명의 부동산이 확인되어야 합니다. (부동산등기부등본으로 확인 가능)</li>
-          <li><strong>2.</strong> 기존 대출, 근저당, 선순위 권리 등에 따라 배당금이 적거나 없을 수 있습니다.</li>
-        </ul>
-      </div>
-
-      <!-- 2) 유체동산 강제집행 -->
-      <div class="sub-section">
-        <div class="sub-title">2) 유체동산 강제집행</div>
-        <p class="chapter-body">유체동산은 집기, 가전, 기계, 물품 등 움직일 수 있는 재산입니다.<br>
-        집행관이 현장에 나가 압류 후 매각하는 방식으로 진행됩니다.</p>
-        <div class="note-box">→ 실무상 핵심은 다음과 같습니다.</div>
-        <ul class="item-list">
-          <li><strong>1.</strong> 채무자의 주소나 사업장 등 위치를 알아야 합니다.</li>
-          <li><strong>2.</strong> 그 장소에 실제로 압류할 수 있는 물건이 있어야 합니다.</li>
-          <li><strong>3.</strong> 해당 물건이 매각 가능한 가치가 있어야 합니다.</li>
-        </ul>
-        <p class="chapter-body" style="margin-top:8px;">즉, 위치 특정 · 물건 존재 · 환가 가능성, 세 조건이 모두 갖춰져야 실익이 있습니다.</p>
-      </div>
-    </div>
-
-    <!-- ── 3. 핵심 정리 ── -->
+    <!-- ─── 5. 정리 ─── -->
     <div class="summary-box">
-      <div class="summary-heading">3. 핵심 정리</div>
+      <div class="summary-heading">5. 핵심 정리</div>
       <p style="font-size:0.84rem; color:var(--muted); margin-bottom:18px;">위 안내드린 내용의 중요 포인트를 정리하면 다음과 같습니다.</p>
       <ul class="summary-list">
         <li>
@@ -849,7 +690,8 @@
         </li>
       </ul>
     </div>
-  </div>
+
+  </div><!-- end guide card -->
 
   <!-- CTA -->
   <div class="card cta-card">
