@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이돈호 대표변호사 | 법무법인 노바</title>
+  <style>
+    :root {
+      --primary: #1a2e4a;
+      --accent: #c9a84c;
+      --light: #f7f5f0;
+      --text: #2c2c2c;
+      --muted: #6b6b6b;
+      --border: #e0ddd7;
+      --step-bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .firm-name {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+    }
+
+    header .logo-accent {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #2d4a6e 100%);
+      color: #fff;
+      padding: 60px 40px 50px;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 200px;
+      height: 240px;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid var(--accent);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .hero-photo-fallback {
+      flex-shrink: 0;
+      width: 200px;
+      height: 240px;
+      border-radius: 8px;
+      border: 3px solid var(--accent);
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hero-info {
+      flex: 1;
+    }
+
+    .hero-info .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .hero-info h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .hero-info .title-en {
+      font-size: 0.95rem;
+      opacity: 0.65;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-info .philosophy {
+      background: rgba(255,255,255,0.08);
+      border-left: 3px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
+      font-style: italic;
+    }
+
+    /* ── MEDIA BADGE ROW ── */
+    .media-row {
+      background: var(--primary);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 14px 40px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .media-row .channel {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+
+    .card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon {
+      font-size: 1.1rem;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-list {
+      list-style: none;
+    }
+
+    .edu-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .edu-list li:last-child {
+      border-bottom: none;
+    }
+
+    .edu-list li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ── CASES ── */
+    .case-list {
+      list-style: none;
+    }
+
+    .case-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .case-list li:last-child {
+      border-bottom: none;
+    }
+
+    .case-list li .case-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── CREDENTIALS ── */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cred-item {
+      background: var(--light);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cred-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── GUIDE SECTION ── */
+    .guide-section {
+      grid-column: 1 / -1;
+    }
+
+    .guide-section h2 {
+      font-size: 1rem;
+    }
+
+    .guide-intro {
+      background: #fff8ed;
+      border: 1px solid #f0d98a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      color: #7a5c00;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48px;
+      flex-shrink: 0;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .step-line {
+      width: 2px;
+      background: var(--border);
+      flex: 1;
+      min-height: 20px;
+    }
+
+    .step:last-child .step-line {
+      display: none;
+    }
+
+    .step-body {
+      flex: 1;
+      background: var(--step-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+
+    .step-phase {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .step-detail {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .step-detail li {
+      font-size: 0.86rem;
+      color: var(--text);
+      padding: 8px 12px;
+      background: var(--light);
+      border-radius: 6px;
+      line-height: 1.6;
+    }
+
+    .step-detail li strong {
+      color: var(--primary);
+    }
+
+    .step-highlight {
+      display: inline-block;
+      background: #fff0e0;
+      color: #b35c00;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ── CTA ── */
+    .cta-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--primary), #2d4a6e);
+      color: #fff;
+      text-align: center;
+      padding: 36px 28px;
+    }
+
+    .cta-card h2 {
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .cta-card p {
+      opacity: 0.85;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    .btn-gold {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 20px 24px;
+      line-height: 1.8;
+    }
+
+    /* ── SUCCESS CASE ── */
+    .success-case {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .success-badge {
+      display: inline-block;
+      background: #1a7a3c;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 16px;
+      border-radius: 20px;
+      align-self: flex-start;
+    }
+
+    .success-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .success-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .success-doc-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .success-doc-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      cursor: zoom-in;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .success-doc-img.zoomed {
+      cursor: zoom-out;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+    }
+
+    .success-doc-caption {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── CASE REPORT ── */
+    .report-section {
+      grid-column: 1 / -1;
+      border-top: 3px solid var(--primary);
+      margin-top: 12px;
+      padding-top: 32px;
+    }
+
+    .report-section > h2 {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .callout {
+      border-radius: 8px;
+      padding: 16px 18px;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .callout.warn  { background: #fff8ed; border-left: 4px solid var(--accent); color: #7a5c00; }
+    .callout.danger { background: #fdf0ef; border-left: 4px solid #c0392b; color: #7a1a1a; }
+    .callout.info  { background: #eef4fb; border-left: 4px solid #1a4a80; color: #1a4a80; }
+
+    .tl-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+    }
+    .tl-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 140px;
+    }
+    .tl-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--primary);
+    }
+    .tl-dot.red { background: #c0392b; border-color: #c0392b; }
+    .tl-date  { font-size: 0.78rem; font-weight: 700; color: var(--primary); }
+    .tl-label { font-size: 0.71rem; color: var(--muted); text-align: center; }
+    .tl-line  { height: 2px; width: 60px; background: var(--border); margin-bottom: 16px; }
+
+    .issue-block { margin-bottom: 24px; }
+    .issue-block:last-child { margin-bottom: 0; }
+    .issue-label {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .issue-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+    .issue-body  { font-size: 0.88rem; color: var(--text); line-height: 1.8; margin-bottom: 10px; }
+
+    .sub-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .sub-list li {
+      font-size: 0.86rem;
+      background: var(--light);
+      border-radius: 6px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--border);
+      line-height: 1.7;
+    }
+    .sub-list li.ok     { border-left-color: #27ae60; background: #f0faf4; }
+    .sub-list li.warn   { border-left-color: var(--accent); background: #fff8ed; }
+    .sub-list li.danger { border-left-color: #c0392b; background: #fdf0ef; }
+
+    .action-group { margin-bottom: 24px; }
+    .action-group:last-child { margin-bottom: 0; }
+    .action-group-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+      background: var(--primary);
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .action-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .action-steps li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.88rem; line-height: 1.75; }
+    .action-steps li .num {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 3px;
+    }
+
+    .sent-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .sent-table th {
+      background: var(--primary); color: #fff;
+      padding: 9px 14px; text-align: left;
+      font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em;
+    }
+    .sent-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.7; }
+    .sent-table tr:last-child td { border-bottom: none; }
+    .sent-table tr:nth-child(even) td { background: var(--light); }
+
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+    .tag.red    { background: #fdf0ef; color: #c0392b; }
+    .tag.yellow { background: #fff8ed; color: #b35c00; }
+    .tag.green  { background: #f0faf4; color: #1a7a3c; }
+
+    .summary-box {
+      background: linear-gradient(135deg, var(--primary), #2d4a6e);
+      color: #fff;
+      border-radius: 10px;
+      padding: 24px 26px;
+      margin-top: 4px;
+    }
+    .summary-box .summary-title { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px; }
+    .summary-box p { font-size: 0.9rem; line-height: 1.85; opacity: 0.92; }
+
+    .report-divider {
+      grid-column: 1 / -1;
+      border: none;
+      border-top: 2px dashed var(--border);
+      margin: 8px 0 4px;
+    }
+
+    /* ── SEIZURE GUIDE ── */
+    .seizure-intro {
+      background: #fff8ed;
+      border: 1px solid #f0d98a;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 0.92rem;
+      color: #7a5c00;
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .seizure-chapter {
+      margin-bottom: 32px;
+    }
+
+    .seizure-chapter-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding: 8px 14px;
+      background: #f4f1ea;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+    }
+
+    .seizure-sub {
+      margin-bottom: 20px;
+    }
+
+    .seizure-sub-title {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .seizure-body {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    .seizure-arrow {
+      background: #eef4fb;
+      border-left: 3px solid #1a4a80;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: #1a4a80;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+
+    .seizure-notice {
+      background: #fff0e0;
+      border: 1px solid #f0c080;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: #7a4500;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+
+    .seizure-bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 10px 0;
+      padding-left: 4px;
+    }
+
+    .seizure-bullet-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      padding: 8px 12px;
+      background: var(--light);
+      border-radius: 6px;
+      border-left: 3px solid var(--border);
+      line-height: 1.7;
+    }
+
+    .seizure-limit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 10px 0;
+      padding-left: 4px;
+    }
+
+    .seizure-limit-list li {
+      font-size: 0.88rem;
+      color: #7a1a1a;
+      padding: 8px 12px;
+      background: #fdf0ef;
+      border-radius: 6px;
+      border-left: 3px solid #c0392b;
+      line-height: 1.7;
+    }
+
+    .seizure-summary {
+      background: linear-gradient(135deg, var(--primary), #2d4a6e);
+      color: #fff;
+      border-radius: 10px;
+      padding: 24px 26px;
+      margin-top: 8px;
+    }
+
+    .seizure-summary .summary-heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .seizure-summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .seizure-summary-list li {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      opacity: 0.92;
+      padding-left: 4px;
+    }
+
+    .seizure-summary-list li strong {
+      color: var(--accent);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .hero-info .philosophy {
+        text-align: left;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .card.full-width,
+      .guide-section,
+      .cta-card {
+        grid-column: 1;
+      }
+
+      .cred-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 14px 20px;
+      }
+
+      .hero {
+        padding: 40px 20px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <span class="firm-name"><span class="logo-accent">NOVA</span> LAW FIRM &nbsp;|&nbsp; 법무법인 노바</span>
+  <span style="font-size:0.8rem; opacity:0.6;">novalaw.kr</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <img
+      class="hero-photo"
+      src="https://novalaw.kr/images/profiles/lawyers/profile-lawyer-leedonho-2026.jpg"
+      alt="이돈호 대표변호사"
+      onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';"
+    />
+    <div class="hero-photo-fallback" id="photo-fallback" style="display:none;">⚖️</div>
+
+    <div class="hero-info">
+      <span class="badge">대표변호사</span>
+      <h1>이돈호</h1>
+      <p class="title-en">Lee Don-ho &nbsp;·&nbsp; Chief Attorney</p>
+      <blockquote class="philosophy">
+        "듣기 좋은 말보다 현실적인 진단을 우선합니다.<br>
+        감정적 위로보다 사건의 실체와 절차적 대응에 집중합니다."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA BADGES -->
+<div class="media-row">
+  <span style="font-size:0.7rem; opacity:0.5; align-self:center; margin-right:4px;">방송 출연</span>
+  <span class="channel">KBS</span>
+  <span class="channel">MBC</span>
+  <span class="channel">SBS</span>
+  <span class="channel">JTBC</span>
+  <span class="channel">YTN</span>
+  <span class="channel">채널A</span>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- 학력 -->
+  <div class="card">
+    <h2><span class="icon">🎓</span> 학력</h2>
+    <ul class="edu-list">
+      <li>성균관대학교 법학·언론학</li>
+      <li>경북대학교 법학전문대학원 (로스쿨)</li>
+      <li>연세대학교 법학전문대학원 법학박사 과정</li>
+    </ul>
+  </div>
+
+  <!-- 주요 경력 -->
+  <div class="card">
+    <h2><span class="icon">💼</span> 주요 경력</h2>
+    <ul class="edu-list">
+      <li>법무법인 노바 대표변호사 (현)</li>
+      <li>대법원 국선변호인 (현)</li>
+      <li>법무부 중소기업 법률 자문위원 (현)</li>
+      <li>법무법인 AK 파트너 변호사 (전)</li>
+    </ul>
+  </div>
+
+  <!-- 주요 사례 -->
+  <div class="card full-width">
+    <h2><span class="icon">⚖️</span> 주요 사례</h2>
+    <ul class="case-list">
+      <li><span class="case-icon">🛒</span>쿠팡 개인정보 유출 집단소송 (약 22,000명)</li>
+      <li><span class="case-icon">📱</span>SKT 유심 개인정보 유출 집단소송 (약 27,000명)</li>
+      <li><span class="case-icon">📸</span>인스타그램 계정 정지 피해자 대리</li>
+      <li><span class="case-icon">💪</span>보디빌더·인플루언서 '진맨' 황철순 법률 대리</li>
+      <li><span class="case-icon">🎵</span>tvN 드라마 '귀신을 팔아드립니다' OST 저작권 자문</li>
+      <li><span class="case-icon">©️</span>대형 엔터테인먼트사 대상 저작권 분쟁 다수</li>
+      <li><span class="case-icon">⚡</span>마약 사건 항소심 감형, 보이스피싱 구속영장 기각 등</li>
+    </ul>
+  </div>
+
+  <!-- 자격 -->
+  <div class="card full-width">
+    <h2><span class="icon">📋</span> 자격 및 수료</h2>
+    <div class="cred-grid">
+      <div class="cred-item">변호사 자격증</div>
+      <div class="cred-item">학교폭력예방상담사 1급</div>
+      <div class="cred-item">금융규제준수 담당자</div>
+      <div class="cred-item">변리사 연수 수료</div>
+      <div class="cred-item">PIA 탐정 자격증</div>
+    </div>
+  </div>
+
+  <!-- 압류 및 집행 절차 안내 -->
+  <div class="card full-width guide-section">
+    <h2><span class="icon">⚖️</span> 압류 및 집행 절차 안내</h2>
+
+    <div class="seizure-intro">
+      안녕하세요, 압류 및 집행 절차 관련해 안내드립니다.<br><br>
+      안내드릴 내용이 조금 길어, 아래 내용을 천천히 확인 후 어느 절차로 진행을 원하시는지 말씀 부탁드립니다.<br><br>
+      채권을 받아내는 절차는 크게 <strong>1. 채권압류</strong>와 <strong>2. 강제집행</strong>으로 나뉩니다.
+    </div>
+
+    <!-- 1. 채권압류 -->
+    <div class="seizure-chapter">
+      <div class="seizure-chapter-title">1. 채권압류</div>
+      <p class="seizure-body">채권압류는 채무자 재산 중에서 급여나 예금처럼 제3자를 통해 받을 돈을 묶는 절차입니다.</p>
+
+      <!-- 1) 급여압류 -->
+      <div class="seizure-sub">
+        <div class="seizure-sub-title">1) 급여압류</div>
+        <p class="seizure-body">채무자가 회사에 다니고 있다면, 그 회사에 지급되는 급여를 압류할 수 있습니다.<br>
+        즉, 채무자가 월급을 받을 때 그 돈을 바로 가져가지 못하게 하고, 그중 압류 가능한 범위에서 채권자가 회수하는 방식입니다.</p>
+
+        <div class="seizure-arrow">
+          → 급여압류를 진행하기 위해서는 다음 사항이 중요합니다.
+        </div>
+
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 급여압류를 하려면 채무자의 현재 근무지를 알아야 합니다.</li>
+          <li><strong>2.</strong> 근무처를 특정해야 법원에 압류 신청이 가능합니다.<br>
+            <span style="color:#c0392b; font-size:0.85rem;">▶ 따라서 현 근무지를 모르면 급여압류는 진행이 어렵습니다.</span></li>
+          <li><strong>3.</strong> 급여는 전부 압류되는 것이 아니라, 법에서 정한 생계보호 범위(250만원)가 있어 일부만 압류됩니다.</li>
+        </ul>
+      </div>
+
+      <!-- 2) 은행 예금압류 -->
+      <div class="seizure-sub">
+        <div class="seizure-sub-title">2) 은행 예금압류</div>
+        <p class="seizure-body">채무자 명의 통장에 들어 있는 예금을 압류하는 방법입니다.<br>
+        법원에 신청하면 해당 은행 계좌의 돈이 묶이고, 그 범위에서 채권을 회수할 수 있습니다.</p>
+
+        <p class="seizure-body">저희 법무법인 노바에서는 압류 진행 시 신용조회를 진행 후 압류 진행하시기를 권해드리고 있습니다.</p>
+
+        <div class="seizure-notice">
+          ※ 신용조회를 원하시는 경우 업체 소개해드리고 있습니다.
+        </div>
+
+        <div class="seizure-arrow">▶ 신용조회 시 아래 정보를 확인할 수 있습니다.</div>
+
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 채무자의 부동산정보</li>
+          <li><strong>2.</strong> 채무불이행 정보</li>
+          <li><strong>3.</strong> 카드사 발급 및 연체 이력</li>
+          <li><strong>4.</strong> 신용평점</li>
+          <li><strong>5.</strong> 은행 거래기관 정보</li>
+        </ul>
+
+        <p class="seizure-body">알고계신 계좌가 있으시다면 신용조회 등으로 알고계신 계좌가 채무자 계좌가 맞는지 등 확인하실 수 있습니다.</p>
+
+        <p class="seizure-body">채권압류(개인)의 경우 급여압류와 마찬가지로 은행 압류 시에도 최저생계비 250만원을 제외한 나머지 금액만 압류가 됩니다.<br>
+        단, 법인 명의의 계좌인 경우에는 최저생계비는 포함되지 않습니다.</p>
+
+        <div class="seizure-arrow">
+          → 실무상으로는 핵심은 다음과 같습니다.<br><br>
+          은행은 정확히 몰라도 특정 은행(1금융권 예시. 우리은행, 국민은행, 신한은행 등)을 상대로 시도는 가능합니다.<br>
+          주요 은행을 순차적(평균 3개~4개 정도 신청)으로 신청하는 방식으로 진행합니다.
+        </div>
+
+        <p class="seizure-body">다만 다음과 같은 한계가 있습니다.</p>
+        <ul class="seizure-limit-list">
+          <li><strong>1.</strong> 그 은행에 계좌가 없을 수 있습니다</li>
+          <li><strong>2.</strong> 계좌가 있어도 잔액이 없을 수 있습니다</li>
+          <li><strong>3.</strong> 따라서 실제 회수가 전혀 안 될 수도 있습니다</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. 강제집행 -->
+    <div class="seizure-chapter">
+      <div class="seizure-chapter-title">2. 강제집행</div>
+      <p class="seizure-body">강제집행은 채무자 명의 재산을 직접 처분해서 돈을 회수하는 절차입니다.</p>
+
+      <!-- 1) 부동산 강제집행 -->
+      <div class="seizure-sub">
+        <div class="seizure-sub-title">1) 부동산 강제집행</div>
+        <p class="seizure-body">채무자 명의 아파트, 빌라, 상가, 토지 등이 있으면 강제경매를 신청할 수 있습니다.</p>
+
+        <div class="seizure-arrow">▶ 절차는 크게 다음과 같습니다.</div>
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 법원에 강제경매를 신청합니다.</li>
+          <li><strong>2.</strong> 부동산이 매각됩니다.</li>
+          <li><strong>3.</strong> 매각대금에서 채권을 배당받습니다.</li>
+        </ul>
+
+        <div class="seizure-arrow">▶ 유의사항은 다음과 같습니다.</div>
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 채무자 명의 부동산이 확인되어야 합니다. (부동산등기부등본으로 확인 가능)</li>
+          <li><strong>2.</strong> 기존 대출, 근저당, 선순위 권리 등에 따라 배당금이 적거나 없을 수 있습니다.</li>
+        </ul>
+      </div>
+
+      <!-- 2) 유체동산 강제집행 -->
+      <div class="seizure-sub">
+        <div class="seizure-sub-title">2) 유체동산 강제집행</div>
+        <p class="seizure-body">유체동산은 집기, 가전, 기계, 물품 등 움직일 수 있는 재산입니다.<br>
+        집행관이 현장에 나가 압류 후 매각하는 방식으로 진행됩니다.</p>
+
+        <div class="seizure-arrow">
+          → 실무상으로는 핵심은 다음과 같습니다.
+        </div>
+
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 채무자의 주소나 사업장 등 위치를 알아야 합니다.</li>
+          <li><strong>2.</strong> 그 장소에 실제로 압류할 수 있는 물건이 있어야 합니다.</li>
+          <li><strong>3.</strong> 해당 물건이 매각 가능한 가치가 있어야 합니다.</li>
+        </ul>
+
+        <p class="seizure-body">즉, 아래 조건이 모두 맞아야 실익이 있습니다.</p>
+        <ul class="seizure-bullet-list">
+          <li><strong>1.</strong> 위치 특정 가능</li>
+          <li><strong>2.</strong> 물건 존재</li>
+          <li><strong>3.</strong> 환가 가능성 있음</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. 핵심 정리 -->
+    <div class="seizure-summary">
+      <div class="summary-heading">3. 핵심 정리</div>
+      <p style="font-size:0.88rem; opacity:0.85; margin-bottom:14px;">위 안내드린 내용에 중요한 포인트만 정리하면 다음과 같습니다.</p>
+      <ul class="seizure-summary-list">
+        <li>
+          <strong>1. 급여압류</strong><br>
+          → 채무자의 현재 직장을 알아야 진행 가능합니다.
+        </li>
+        <li>
+          <strong>2. 은행 예금압류</strong><br>
+          → 은행을 몰라도 시도는 가능하지만<br>
+          → 계좌가 없거나 잔액이 없으면 회수되지 않을 수 있습니다.
+        </li>
+        <li>
+          <strong>3. 부동산 강제집행</strong><br>
+          → 채무자 명의 부동산이 있으면 경매로 회수 가능합니다.
+        </li>
+        <li>
+          <strong>4. 유체동산 강제집행</strong><br>
+          → 주소 + 실제 물건 + 가치가 모두 있어야 실익이 있습니다.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="card cta-card">
+    <h2><span class="icon">📞</span> 법률 상담 안내</h2>
+    <p>보이스피싱 피해 회복부터 형사·민사 전반에 걸친 법률 문제까지<br>이돈호 대표변호사가 현실적인 해법을 제시합니다.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-gold" href="tel:+82-2-0000-0000">📞 전화 상담</a>
+      <a class="btn btn-outline" href="https://www.novalaw.kr" target="_blank">🌐 공식 홈페이지</a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>법무법인 노바 &nbsp;|&nbsp; 대표변호사 이돈호</p>
+  <p style="margin-top:4px;">본 페이지는 정보 제공 목적으로 제작되었습니다.</p>
+</footer>
+
+</body>
+</html>
